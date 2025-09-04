@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR Xerox - Perambalur | Interactive Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="spotlight"></div>
+        <div class="machine-reveal">
+            <div class="ambient-glow"></div>
+        </div>
+    </div>
+
+    <!-- Main Machine Interface -->
+    <div class="machine-container" id="machineContainer">
+        <!-- Machine Body -->
+        <div class="machine-body">
+            <!-- Main Display Screen -->
+            <div class="main-display">
+                <div class="screen-frame">
+                    <div class="display-content" id="displayContent">
+                        <div class="shop-title">SR XEROX</div>
+                        <div class="shop-subtitle">Perambalur</div>
+                        <div class="status-indicator">
+                            <div class="led-dot"></div>
+                            <span>READY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="control-panel">
+                <button class="control-btn about-btn" data-section="about">
+                    <div class="btn-icon">📖</div>
+                    <div class="btn-label">ABOUT</div>
+                    <div class="btn-glow"></div>
+                </button>
+                
+                <button class="control-btn services-btn" data-section="services">
+                    <div class="btn-icon">🔧</div>
+                    <div class="btn-label">SERVICES</div>
+                    <div class="btn-glow"></div>
+                </button>
+                
+                <button class="control-btn call-btn" data-section="call">
+                    <div class="btn-icon">📞</div>
+                    <div class="btn-label">CALL</div>
+                    <div class="btn-glow"></div>
+                </button>
+                
+                <button class="control-btn gmail-btn" data-section="gmail">
+                    <div class="btn-icon">✉️</div>
+                    <div class="btn-label">GMAIL</div>
+                    <div class="btn-glow"></div>
+                </button>
+                
+                <button class="control-btn directions-btn" data-section="directions">
+                    <div class="btn-icon">🗺️</div>
+                    <div class="btn-label">DIRECTIONS</div>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+
+            <!-- Paper Output Slot -->
+            <div class="paper-slot">
+                <div class="slot-opening"></div>
+                <div class="paper-guide"></div>
+            </div>
+
+            <!-- Machine Status LEDs -->
+            <div class="status-leds">
+                <div class="led power-led"></div>
+                <div class="led ready-led active"></div>
+                <div class="led error-led"></div>
+            </div>
+        </div>
+
+        <!-- Paper Output Animation -->
+        <div class="paper-output" id="paperOutput">
+            <div class="paper" id="paper">
+                <div class="paper-content" id="paperContent">
+                    <!-- Content will be dynamically inserted -->
+                </div>
+                <button class="back-btn" id="backBtn">
+                    <span>← BACK</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Sections (Hidden Templates) -->
+    <div class="content-templates" style="display: none;">
+        <!-- About Content -->
+        <div id="aboutTemplate">
+            <div class="paper-header">
+                <h2>SR XEROX</h2>
+                <div class="subtitle">(Naseeha General Store)</div>
+                <div class="divider">================================</div>
+            </div>
+            <div class="paper-body">
+                <div class="address-section">
+                    <strong>Address:</strong><br>
+                    37-D1, Kamarajar Signal<br>
+                    Main Road, Perambalur-621212
+                </div>
+                <br>
+                <div class="description">
+                    Your trusted printing partner in Perambalur
+                </div>
+                <br>
+                <div class="details">
+                    ✓ Professional printing and xerox services<br>
+                    ✓ State-of-the-art equipment and technology<br>
+                    ✓ Quality, speed, and reliability guaranteed<br>
+                    ✓ Serving Perambalur community with excellence<br>
+                    ✓ Complete documentation solutions under one roof
+                </div>
+                <br>
+                <div class="tagline">
+                    <strong>Where Quality Meets Efficiency</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Content -->
+        <div id="servicesTemplate">
+            <div class="paper-header">
+                <h2>OUR SERVICES</h2>
+                <div class="divider">================================</div>
+            </div>
+            <div class="paper-body">
+                <div class="service-item">
+                    📄 <strong>Photocopying & Xerox</strong><br>
+                    High-quality black & white and color photocopying
+                </div>
+                <br>
+                <div class="service-item">
+                    🖨️ <strong>Digital Printing</strong><br>
+                    Professional color and monochrome printing services
+                </div>
+                <br>
+                <div class="service-item">
+                    📚 <strong>Binding & Lamination</strong><br>
+                    Document binding, lamination, and finishing services
+                </div>
+                <br>
+                <div class="service-item">
+                    📊 <strong>Document Scanning</strong><br>
+                    Convert physical documents to digital formats
+                </div>
+                <br>
+                <div class="service-item">
+                    🎨 <strong>Design Services</strong><br>
+                    Layout design and document formatting
+                </div>
+                <br>
+                <div class="tagline">
+                    <strong>Operating Hours:</strong><br>
+                    Monday - Saturday: 8:00 AM - 8:00 PM<br>
+                    Sunday: 8:30 AM - 4:45 PM
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Content -->
+        <div id="callTemplate">
+            <div class="paper-header">
+                <h2>CONTACT INFORMATION</h2>
+                <div class="divider">================================</div>
+            </div>
+            <div class="paper-body">
+                <div class="contact-item">
+                    📞 <strong>Phone:</strong><br>
+                    <a href="tel:+918489413570">+91 84894 13570</a>
+                </div>
+                <br>
+                <div class="contact-item">
+                    💬 <strong>WhatsApp:</strong><br>
+                    <a href="https://wa.me/918489413570" target="_blank">8489413570</a>
+                </div>
+                <br>
+                <div class="contact-item">
+                    📍 <strong>Address:</strong><br>
+                    37-D1, Kamarajar Signal<br>
+                    Main Road, Perambalur-621212<br>
+                    Next to Bawa Medical
+                </div>
+                <br>
+                <div class="tagline">
+                    <strong>Quick & Professional Service</strong><br>
+                    Call us for urgent printing needs!
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Content -->
+        <div id="gmailTemplate">
+            <div class="paper-header">
+                <h2>EMAIL CONTACT</h2>
+                <div class="divider">================================</div>
+            </div>
+            <div class="paper-body">
+                <div class="contact-item">
+                    ✉️ <strong>Email Address:</strong><br>
+                    <a href="mailto:srxeroxpblr@gmail.com">srxeroxpblr@gmail.com</a>
+                </div>
+                <br>
+                <div class="contact-item">
+                    📝 <strong>For Email Inquiries:</strong><br>
+                    • Service quotations<br>
+                    • Bulk order requirements<br>
+                    • Special printing projects<br>
+                    • Document specifications
+                </div>
+                <br>
+                <div class="contact-item">
+                    ⏱️ <strong>Response Time:</strong><br>
+                    We typically respond within 2-4 hours<br>
+                    during business hours
+                </div>
+                <br>
+                <div class="tagline">
+                    <strong>Professional Communication</strong><br>
+                    Email us your requirements!
+                </div>
+            </div>
+        </div>
+
+        <!-- Directions Content -->
+        <div id="directionsTemplate">
+            <div class="paper-header">
+                <h2>DIRECTIONS</h2>
+                <div class="divider">================================</div>
+            </div>
+            <div class="paper-body">
+                <div class="contact-item">
+                    📍 <strong>Our Location:</strong><br>
+                    SR Xerox (Naseeha General Store)<br>
+                    37-D1, Kamarajar Signal<br>
+                    Main Road, Perambalur-621212
+                </div>
+                <br>
+                <div class="contact-item">
+                    🗺️ <strong>Landmarks:</strong><br>
+                    • Next to Bawa Medical<br>
+                    • Near Kamarajar Signal<br>
+                    • On Main Road<br>
+                    • Sungu Pettai area
+                </div>
+                <br>
+                <div class="contact-item">
+                    🚗 <strong>How to Reach:</strong><br>
+                    Easy access from main road<br>
+                    Parking available nearby<br>
+                    <a href="https://maps.google.com/?q=SR+Xerox+Perambalur" target="_blank">Open in Google Maps</a>
+                </div>
+                <br>
+                <div class="tagline">
+                    <strong>Easy to Find & Access</strong><br>
+                    Visit us at your convenience!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
